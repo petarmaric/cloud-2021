@@ -31,12 +31,23 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # django apps
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # local apps
+    'visits',
+
+    # 3rd party apps
+    'health_check',
+    'health_check.db',
+    'health_check.storage',
+    'health_check.contrib.migrations',
+    'health_check.contrib.psutil',
 ]
 
 MIDDLEWARE = [
@@ -123,3 +134,11 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# Health checks
+
+HEALTH_CHECK = {
+    'DISK_USAGE_MAX': 80, # in percent
+    'MEMORY_MIN': 200, # in MB
+}
