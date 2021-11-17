@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # local apps
+    'visits',
+
     # 3rd party apps
     'health_check',
     'health_check.db',
