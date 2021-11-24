@@ -1,3 +1,19 @@
 from django.contrib import admin
 
-# Register your models here.
+from . import models
+
+
+@admin.register(models.Visit)
+class VisitAdmin(admin.ModelAdmin):
+    date_hierarchy = 'visit_time'
+    list_display = [
+        'user_ip',
+        'user_browser',
+        'visit_time',
+    ]
+    list_filter = [
+        'user_ip',
+        'user_browser',
+        'visit_time',
+    ]
+    search_fields = ['user_browser']

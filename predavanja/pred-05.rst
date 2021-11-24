@@ -12,7 +12,7 @@ Uvod u Django [nastavak]
 
 - play around with Django's API and models in (i)python shell::
 
-    poetry run python manage.py shell
+    $ poetry run python manage.py shell
 
 - run the Django project::
 
